@@ -1,6 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 
-
+from schema.prediction_response import PredictionResponse 
 
 from fastapi import FastAPI, HTTPException, Query, Path
 from fastapi.responses import JSONResponse
@@ -33,7 +33,7 @@ def home():
 def health():
     return {'status':'OK', 'model_version':MODEL_VERSION, 'model_loaded': model is not None}
 
-@app.post('/predict')
+@app.post('/predict', response_model = PredictionRespsonse)
 def predict_insurance(person:Insurance):  # person is a object of Insurance class..
 
     # person variable has all fields like bmi, lifestye_risk, city_tier all that..
@@ -48,7 +48,7 @@ def predict_insurance(person:Insurance):  # person is a object of Insurance clas
     }])
 
     prediction = predict(input_data)   # this predict funciton is in predict.py file...
-    
+
     return JSONResponse(status_code = 200, content={'predicted_category': prediction})
 
 
