@@ -33,7 +33,7 @@ def home():
 def health():
     return {'status':'OK', 'model_version':MODEL_VERSION, 'model_loaded': model is not None}
 
-@app.post('/predict', response_model = PredictionRespsonse)
+@app.post('/predict', response_model = PredictionResponse)
 def predict_insurance(person:Insurance):  # person is a object of Insurance class..
 
     # person variable has all fields like bmi, lifestye_risk, city_tier all that..
