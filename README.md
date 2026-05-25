@@ -145,17 +145,6 @@ Main prediction endpoint.
 | `lifestyle_risk` | Based on smoker status + BMI         |
 | `city_tier`      | 1 (Metro) / 2 (Tier-2) / 3 (Other)   |
 
----
-
-## 🏙️ City Tier Classification
-
-| Tier       | Cities                                                       |
-| ---------- | ------------------------------------------------------------ |
-| **Tier 1** | Mumbai, Delhi, Bangalore, Chennai, Kolkata, Hyderabad, Pune  |
-| **Tier 2** | Jaipur, Lucknow, Indore, Chandigarh, Surat, Nagpur, and more |
-| **Tier 3** | All other cities                                             |
-
----
 
 ## 🐳 Docker
 
@@ -271,18 +260,6 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 Access the API at: **http://localhost:8000**
 
 Access Swagger UI docs at: **http://localhost:8000/docs**
-
----
-
-## 📖 Interactive API Documentation
-
-FastAPI provides **automatic interactive documentation**:
-
-| Tool           | URL                         |
-| -------------- | --------------------------- |
-| **Swagger UI** | http://localhost:8000/docs  |
-| **ReDoc**      | http://localhost:8000/redoc |
-
 ---
 
 ## 👨‍💻 Author
